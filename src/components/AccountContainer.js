@@ -5,25 +5,26 @@ import {transactions} from '../transactionsData'
 
 class AccountContainer extends Component {
 
-  constructor() {
-    super()
+state = {
+  search: ''
+}
 
-    // get a default state working with the data imported from TransactionsData
-    // use this to get the functionality working
-    // then replace the default transactions with a call to the API
-
-  }
+mapProp(){
+  return this.props.accounts.map((account, index) =>
+    (<TransactionsList {...account} key={index}/>))
+}
+// const accounts = this.props.map((account, index) =>
+//   (<TransactionsList {...account} key={index}/>))
 
   handleChange(event) {
-    // your code here
+   const searchBox = event.target
+
   }
-
   render() {
-
     return (
       <div>
-        <Search />
-        <TransactionsList />
+        <Search onChange={this.handleChange}/>
+        <TransactionsList accounts={this.mapProp}/>
       </div>
     )
   }

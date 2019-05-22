@@ -1,35 +1,31 @@
 import React from 'react'
 
-const TransactionsList = () => {
-
+const TransactionsList = (props) => {
   return (
     <table className="ui celled striped padded table">
       <tbody>
         <tr>
           <th>
             <h3 className="ui center aligned header">
-              Posted At
+              Posted At {props.posted_at}
             </h3>
           </th>
           <th>
             <h3 className="ui center aligned header">
-              Description
+              Description {props.description}
             </h3>
           </th>
           <th>
             <h3 className="ui center aligned header">
-              Category
+              Category {props.posted_at}
             </h3>
           </th>
           <th>
             <h3 className="ui center aligned header">
-              Amount
+              Amount{props.amount}
             </h3>
           </th>
         </tr>
-
-        {"... your code here..."}
-
       </tbody>
     </table>
   )
